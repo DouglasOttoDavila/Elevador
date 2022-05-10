@@ -42,18 +42,18 @@ public class Elevador {
     }
 
     // MÉTODOS
-    public void inicializa(){
+    public void inicializa() throws InterruptedException{
         com.limparTela();
-        /* for (int i = 0; i < 20; i++) {
-            consoleHelper.animate(i + "");
-            //simulate a piece of task
-            Thread.sleep(400);
-        } */
         this.andar = new int[this.andares];
         this.pessoas = new int[this.capacidade];
         this.andarAtual = 0;
         this.contPessoas = 0;
         System.out.println("| Inicialização...");
+        for (int i = 0; i < 100; i++) {
+            consoleHelper.animate(i + "");
+            //simulate a piece of task
+            Thread.sleep(20);
+        }
         System.out.println("| Andares: "+andar.length);
         System.out.println("| Andar atual: " + this.andarAtual);
         System.out.println("| Capacidade: "+pessoas.length);
@@ -67,13 +67,13 @@ public class Elevador {
     public void entra(){
         if (this.contPessoas >= pessoas.length){
             com.limparTela();
-            System.out.println("AVISO: O elevador está lotado!\nA lotação máxima de " + pessoas.length + "("+this.ext(pessoas.length)+") pessoas foi atingida.");
+            System.out.println("AVISO: O elevador está lotado!\nA lotação máxima de " + pessoas.length + " ("+this.ext(pessoas.length)+") pessoas foi atingida.");
             com.aguardaInput();
         } else {
             this.pessoas[this.contPessoas] = 1;
             this.contPessoas++;
             com.limparTela();
-            System.out.println("O passageiro ingressou no elevador com sucesso!\nA lotação atual é de " + this.contPessoas + "("+this.ext(this.contPessoas) + ") pessoas.");
+            System.out.println("O passageiro ingressou no elevador com sucesso!\nA lotação atual é de " + this.contPessoas + " ("+this.ext(this.contPessoas) + ") pessoas.");
             com.aguardaInput();
         }
     }
