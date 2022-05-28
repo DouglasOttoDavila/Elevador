@@ -1,7 +1,7 @@
 ## Atividade de Programação Orientada a Objeto (POO)
 
 - UniRitter
-- Professor Victor
+- Professor Vitor
 
 ## (1,5) Crie uma classe denominada Elevador para armazenar as informações de um elevador dentro de um prédio. 
 A classe deve armazenar o andar atual (térreo = 0), total de andares no prédio, capacidade do elevador, e quantas pessoas estão presentes nele.
